@@ -19,7 +19,7 @@ export function postItReducer(state: PostState, action: PostItAction): PostState
             return newState;
         }
         case "POST":{
-            newState.postItArr.push(newState.input);
+            if(newState.input.length > 3) newState.postItArr.push(newState.input);
             return newState;
         }
         case "CLEAR":{
